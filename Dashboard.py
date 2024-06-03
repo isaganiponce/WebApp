@@ -6,65 +6,6 @@ import matplotlib.pyplot as plt
 from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 
-# HTML and CSS for the top bar
-top_bar = """
-<style>
-    .top-bar {
-        background-color: #4CAF50;
-        overflow: hidden;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-    }
-    .top-bar a {
-        float: left;
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-    }
-    .top-bar a:hover {
-        background-color: #ddd;
-        color: black;
-    }
-    .top-bar a.active {
-        background-color: #04AA6D;
-        color: white;
-    }
-    .top-bar .logo {
-        font-size: 20px;
-        font-weight: bold;
-    }
-</style>
-
-<div class="top-bar">
-    <div class="logo">My App</div>
-    <div>
-        <a class="active" href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </div>
-</div>
-"""
-
-# Inject the top bar HTML and CSS into the Streamlit app
-st.components.v1.html(top_bar, height=50)
-
-# Add some content to the app
-st.write("# Welcome to My Streamlit App!")
-st.write("This is a sample web application with a custom horizontal top bar.")
-
-# Add more content to ensure scrolling
-for i in range(20):
-    st.write("This is some content to demonstrate the fixed top bar.", i)
-
 st.title("Sales Forecast Dashboard")
 
 uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
